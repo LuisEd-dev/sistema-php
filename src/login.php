@@ -15,8 +15,7 @@
             header('Location: ../index.html?failedLogin');
         } else {
             session_start();
-            $sess = $_COOKIE["PHPSESSID"];
-            header('Location: ../painel.php?id='.$sess);
+            header('Location: ../painel.php?id='.$_COOKIE["PHPSESSID"]);
         }
     } else {
         header('Location: ../index.html?verificacao');
