@@ -15,6 +15,7 @@
             header('Location: ../index.html?failedLogin');
         } else {
             session_start();
+            setcookie("user", $user, 0, '/');
             header('Location: ../painel.php?id='.$_COOKIE["PHPSESSID"]);
         }
     } else {
