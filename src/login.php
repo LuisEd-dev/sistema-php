@@ -1,5 +1,4 @@
 <?php
-    //destroy
     if($_SERVER['REQUEST_METHOD'] !== 'POST'){
         header('Location: ../login.html');
     }
@@ -12,13 +11,13 @@
         $consulta->bindParam(':senha', md5($pass));
         $consulta->execute();
         if ($consulta->fetch(PDO::FETCH_ASSOC) <= 0){
-            header('Location: ../index.html?failedLogin');
+            header('Location: ../index.php?failedLogin');
+
         } else {
-            session_start();
             setcookie("user", $user, 0, '/');
             header('Location: ../painel.php?id='.$_COOKIE["PHPSESSID"]);
         }
     } else {
-        header('Location: ../index.html?verificacao');
+        header('Location: ../index.php?verificacao');
     }
 ?>
