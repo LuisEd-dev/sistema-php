@@ -1,5 +1,6 @@
 body, html{
     height: 100%;
+    font-family: 'Montserrat', sans-serif;
 }
 #divTopo{
     width: 100%;
@@ -36,12 +37,10 @@ body, html{
     margin-top: 50px;
 }
 h1{
-    font-family: 'Montserrat', sans-serif;
     color: #101010;
     margin: 20px;	
 }
 h3{
-    font-family: 'Montserrat', sans-serif;
     color: #4d4d4d;
     margin: 20px;	
 }
@@ -49,13 +48,12 @@ h3{
     margin-top: 80px;
     list-style: none;
 }
-li, a{
-    font-family: 'Montserrat', sans-serif;
+li, a.opcoes{
     color: #ffffff;
     margin-bottom: 10px;
     text-decoration: none;
 }
-a:hover{
+a.opcoes:hover{
     color: black;
     font-weight: bold;
 }
@@ -64,4 +62,31 @@ a:hover{
     height: 500px;
     border-style: solid;
     text-align: start;
+}
+.Usuarios{
+    text-align: center;
+    width: 19.95%;
+    height: 25px;
+    float: left;
+    border-width: 0.25px;
+    border-style: solid;
+    border-color: #000000;
+}
+div#text{
+    width: 100%;
+    height: 40px;
+    font-size: 30px;
+    border-bottom: solid;
+}
+div#adicionar{
+    float: right;
+    font-weight: bold;
+    margin-right: 10px;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.addInput{
+    width: 200px;
 }
