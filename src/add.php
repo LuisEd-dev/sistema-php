@@ -1,6 +1,6 @@
 
 <?php 
-if($_SERVER['REQUEST_METHOD'] == "POST"){
+if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOKIE["validado"] == $_COOKIE["PHPSESSID"]){
     if((isset($_POST["usuario"]) && $_POST["usuario"] != "") && (isset($_POST["senha"]) && $_POST["senha"] != "")){
         $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root", "toor"); 
         $consulta = $pdo->prepare('INSERT INTO admin (usuario, senha, email) VALUES (:usuario, :senha, :email)');
