@@ -5,7 +5,6 @@
     <title>Page Title</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel='stylesheet' type='text/css' media='screen' href='css/painel.css'>
-
 </head>
 <body>
     
@@ -47,9 +46,9 @@
             } else if(isset($_GET["userDelete"])){
                 include "delete.php";
             } else if(isset($_GET["userAdd"])){
-                include "add.php";
+                include "add.html";
             } else {
-                include "src/contador.php";
+                include "contador.php";
             }
             
         ?>
