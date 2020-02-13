@@ -1,4 +1,3 @@
-
 <?php 
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOKIE["validado"] == $_COOKIE["PHPSESSID"]){
     if((isset($_POST["usuario"]) && $_POST["usuario"] != "") && (isset($_POST["senha"]) && $_POST["senha"] != "")){

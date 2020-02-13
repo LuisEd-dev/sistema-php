@@ -1,5 +1,4 @@
 <div id="text">Usuarios: <div id="adicionar"><a href="?userAdd"> + </a></div></div>
-
 <div class="Usuarios"><b>ID</div>
 <div class="Usuarios">Usuario</div>
 <div class="Usuarios">Email</div>
