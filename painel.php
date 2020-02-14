@@ -12,8 +12,6 @@
             }
         } else {
             if(isset($_COOKIE["login"]) && $_COOKIE["login"] == $_COOKIE["PHPSESSID"]){
-                //header('Location: painel.html');
-                //include "painel.html";
                 setcookie("validado", $_GET["id"], 0, '/');
                 header("Location: painel.php");
             } else {
