@@ -8,11 +8,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOK
         $consulta->bindParam(':email', $_POST["email"]);
 
         $consulta->execute();
-        header('Location: ../painel.php?id=usuarios');
+        header('Location: ../../painel.php?id=usuarios');
     } else {
-        header("Location: ../painel.php?userAdd");
+        header("Location: ../../painel.php?userAdd");
     }
 } else {
-    header("Location: ../painel.php?userAdd");
+    header("Location: ../../painel.php?userAdd");
 }
 ?>

@@ -42,11 +42,15 @@
                     break;
                 }
             } else if(isset($_GET["userEdit"])){
-                include "edit.php";
+                include "users/edit.php";
             } else if(isset($_GET["userDelete"])){
-                include "delete.php";
+                include "users/delete.php";
             } else if(isset($_GET["userAdd"])){
-                include "add.html";
+                include "users/add.html";
+            } else if(isset($_GET["newsDelete"])){
+                include "news/delete.php";
+            } else if(isset($_GET["newsAdd"])){
+                include "news/add.html";
             } else {
                 include "contador.php";
             }
