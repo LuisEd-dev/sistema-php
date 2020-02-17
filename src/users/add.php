@@ -12,7 +12,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOK
     } else {
         header("Location: ../../painel.php?userAdd");
     }
+} else if(isset($_COOKIE["validado"]) && $_COOKIE["validado"] == $_COOKIE["PHPSESSID"]){
 } else {
-    header("Location: ../../painel.php?userAdd");
+    exit();
 }
 ?>
+<form action="src/users/add.php" method="POST">
+    <center>
+    <h1> Registre um novo administrador: </h1>
+    Usuario: <input class="addInput" name="usuario" type="text"></input> 
+    Senha: <input class="addInput" name="senha" type="password"></input> 
+    Email: <input class="addInput" name="email" type="text"></input> 
+    <br><br>
+    <button class="btn" type="submit">Adicionar</button> 
+    </center>
+</form>

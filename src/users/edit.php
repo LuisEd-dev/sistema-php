@@ -31,10 +31,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOK
 ?>
 <center>
 <form action='src/users/edit.php' method='POST'>
+    <h1> Edite o usuário: </h1>
     Usuário: <input name="nome" type="text" value="<?php echo $nome; ?>"></input>
     Senha: <input name="pass" type="password"></input>
     Email: <input name="email" type="text" value="<?php echo $email; ?>"></input>
     <input name="id" type="hidden" value="<?php echo $id; ?>">
-    <input type='submit' value="Atualizar"></input> 
+    <br><br>
+    <input class="btn" type='submit' value="Atualizar"></input> 
 </form>
 </center>

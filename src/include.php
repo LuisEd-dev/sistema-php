@@ -29,7 +29,7 @@
             if(isset($_GET["id"])){
                 switch ($_GET["id"]){
                     case "cadastro":
-                        include "cadastro.php";
+                        include "produtos/add.php";
                     break;
                     case "usuarios":
                         include "users/usuarios.php";
@@ -41,17 +41,23 @@
                         include "logs.php";
                     break;
                 }
+            } else if(isset($_GET["userAdd"])){
+                include "users/add.php";
             } else if(isset($_GET["userEdit"])){
                 include "users/edit.php";
             } else if(isset($_GET["userDelete"])){
                 include "users/delete.php";
-            } else if(isset($_GET["userAdd"])){
-                include "users/add.html";
-            } else if(isset($_GET["newsDelete"])){
-                include "news/delete.php";
             } else if(isset($_GET["newsAdd"])){
                 include "news/add.html";
-            } else {
+            } else if(isset($_GET["newsDelete"])){
+                include "news/delete.php";
+            } else if(isset($_GET["prodAdd"])){
+                include "produtos/add.php";
+            } else if(isset($_GET["prodEdit"])){
+                include "produtos/edit.php";
+            }else if(isset($_GET["prodDelete"])){
+                include "produtos/delete.php";
+            }  else {
                 include "produtos/produtos.php";
             }
             
