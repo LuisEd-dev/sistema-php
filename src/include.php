@@ -10,6 +10,7 @@
     
     <div id="divLateral">
         <ul id="lista">
+            <li><a class="opcoes" href="painel.php">Produtos</a></li>
             <li><a class="opcoes" href="painel.php?id=cadastro">Cadastro</a></li>
             <li><a class="opcoes" href="painel.php?id=usuarios">Usuarios</a></li>
             <li><a class="opcoes" href="painel.php?id=newsletter">Newsletter</a></li>
