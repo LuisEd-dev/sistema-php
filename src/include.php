@@ -32,10 +32,10 @@
                         include "cadastro.php";
                     break;
                     case "usuarios":
-                        include "usuarios.php";
+                        include "users/usuarios.php";
                     break;
                     case "newsletter":
-                        include "newsletter.php";
+                        include "news/newsletter.php";
                     break;
                     case "logs":
                         include "logs.php";
@@ -52,7 +52,7 @@
             } else if(isset($_GET["newsAdd"])){
                 include "news/add.html";
             } else {
-                include "contador.php";
+                include "produtos/produtos.php";
             }
             
         ?>

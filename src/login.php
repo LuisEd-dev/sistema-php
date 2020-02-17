@@ -1,11 +1,11 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] !== 'POST'){
-        header('Location: ../login.html');
+        header('Location: ../index.php');
     }
     $user = $_POST["user"];
     $pass = $_POST["pass"];
     if($user != "" AND $pass != ""){
-        $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root", "toor");  
+        $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root", "toor"); 
         $consulta = $pdo->prepare('SELECT * FROM admin WHERE usuario = :usuario AND senha = :senha');
         $consulta->bindParam(':usuario', $user);
         $consulta->bindParam(':senha', md5($pass));

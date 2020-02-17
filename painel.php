@@ -1,3 +1,4 @@
+<title>Painel de Controle</title>
 <?php
     $user = $_COOKIE["user"];
     if(isset($_COOKIE["validado"]) && $_COOKIE["validado"] == $_COOKIE["PHPSESSID"]){

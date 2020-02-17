@@ -63,18 +63,18 @@ a.opcoes:hover{
     border-style: solid;
     text-align: start;
 }
-.Usuarios{
+.Item{
     text-align: center;
     width: 20%;
     height: 25px;
     float: left;
 }
-div#usuario{
+div#itens{
     float: left;
     width: 100%;
     height: 25px;
 }
-#usuario:hover{
+#itens:hover{
     background-color: rgb(175, 175, 175);
 }
 #identificadores{
