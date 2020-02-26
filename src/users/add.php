@@ -13,6 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOK
         header("Location: ../../painel.php?userAdd");
     }
 } else if(isset($_COOKIE["validado"]) && $_COOKIE["validado"] == $_COOKIE["PHPSESSID"]){
+
 } else {
     exit();
 }

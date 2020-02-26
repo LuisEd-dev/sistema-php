@@ -1,3 +1,5 @@
+<div style="width: 100%; height: 100%; overflow-y: scroll;">
+
 <div id="text">Produtos: <div id="adicionar"><a href="?prodAdd"> + </a></div></div>
 <b>
 <div id='identificadores' class="Item">Produto</div>
@@ -21,3 +23,4 @@ foreach ($dados as $dado) {
     echo '</div>';
 }
 ?>
+</div>

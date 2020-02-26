@@ -11,6 +11,7 @@
     <div id="divLateral">
         <ul id="lista">
             <li><a class="opcoes" href="painel.php">Produtos</a></li>
+            <li><a class="opcoes" href="painel.php?id=vendas">Vendas</a></li>
             <li><a class="opcoes" href="painel.php?id=cadastro">Cadastro</a></li>
             <li><a class="opcoes" href="painel.php?id=usuarios">Usuarios</a></li>
             <li><a class="opcoes" href="painel.php?id=newsletter">Newsletter</a></li>
@@ -29,6 +30,9 @@
         <?php
             if(isset($_GET["id"])){
                 switch ($_GET["id"]){
+                    case "vendas":
+                        include "vendas/venda.php";
+                    break;
                     case "cadastro":
                         include "produtos/add.php";
                     break;
