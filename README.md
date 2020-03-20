@@ -18,7 +18,7 @@ No Painel de Controle do XAMPP abra uma shell
 
 Execute os seguintes comandos:
 
-- mysql –u root
+- mysql --user=root
 - DROP DATABASE test;
 - CREATE DATABASE adminsistema;
 - USE adminsistema;
