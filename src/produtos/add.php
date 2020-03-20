@@ -1,7 +1,7 @@
 <?php 
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOKIE["validado"] == $_COOKIE["PHPSESSID"]){
     if((isset($_POST["produto"]) && $_POST["produto"] != "") && (isset($_POST["preco"]) && $_POST["preco"] != "") && (isset($_POST["estoque"]) && $_POST["estoque"] != "")){
-        $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root", "toor"); 
+        $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root"); 
         $consulta = $pdo->prepare('INSERT INTO produtos (produto, valor, estoque) VALUES (:produto, :preco, :estoque)');
         $consulta->bindParam(':produto', $_POST["produto"]);
         $consulta->bindParam(':preco', $_POST["preco"]);

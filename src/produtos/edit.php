@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOK
     $valor =  $_POST['valor'];
     $estoque = $_POST['estoque'];
     
-    $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root", "toor"); 
+    $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root"); 
     $consulta = $pdo->prepare('UPDATE produtos SET produto = :produto, valor = :valor, estoque = :estoque WHERE id = :id');
     $consulta->bindParam(':produto', $produto);
     $consulta->bindParam(':valor', $valor);
@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOK
     header('Location: ../../painel.php');
 } else {
     $id = $_GET['prodEdit'];
-    $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root", "toor"); 
+    $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root"); 
     $consulta = $pdo->prepare('SELECT * FROM produtos WHERE id = :id');
     $consulta->bindParam(':id', $id);
     $consulta->execute();

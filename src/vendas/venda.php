@@ -11,14 +11,14 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOKIE["validado"] == $_COOKIE["PHPSESSID"]){
         if($_POST["prod"] != "" && $_POST["qtd"] != ""){
-            $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root", "toor"); 
+            $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root"); 
             $consulta = $pdo->prepare('SELECT produto, estoque, valor FROM produtos WHERE produto = :produto');
             $consulta->bindParam(':produto', $_POST["prod"]);
             $consulta->execute();
             $response = $consulta->fetch();
             if($_POST["qtd"] <= $response["estoque"]){
                 try{
-                    $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root", "toor"); 
+                    $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root"); 
                     $consulta = $pdo->prepare('UPDATE produtos SET estoque = (estoque - :quantidade) WHERE produto = :produto');
                     $consulta->bindParam(':produto', $_POST["prod"]);
                     $consulta->bindParam(':quantidade', $_POST["qtd"]);

@@ -5,7 +5,7 @@
 <div id='identificadores' class="Newsletter">Deletar</div>
 </b>
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root", "toor"); 
+$pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root"); 
 $consulta = $pdo->prepare('SELECT * FROM newsletter');
 $consulta->execute();
 $dados = $consulta->fetchAll(PDO::FETCH_ASSOC);

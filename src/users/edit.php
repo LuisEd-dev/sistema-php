@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOK
     $pass =  md5($_POST['pass']);
     $email = $_POST['email'];
     echo $id . '<br>'. $nome . '<br>'.$pass . '<br>'.$email;
-    $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root", "toor"); 
+    $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root"); 
     $consulta = $pdo->prepare('UPDATE admin SET usuario = :usuario, senha = :senha, email = :email WHERE id = :id');
     $consulta->bindParam(':usuario', $nome);
     $consulta->bindParam(':senha', $pass);

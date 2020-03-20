@@ -1,6 +1,6 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOKIE["validado"] == $_COOKIE["PHPSESSID"]){
-    $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root", "toor"); 
+    $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root"); 
     $consulta = $pdo->prepare('SELECT * FROM newsletter');
     $consulta->execute();
     $dados = $consulta->fetchAll(PDO::FETCH_ASSOC);

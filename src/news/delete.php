@@ -1,6 +1,6 @@
 <?php
 if(isset($_GET["newsDelete"]) && isset($_COOKIE["validado"]) && $_COOKIE["validado"] == $_COOKIE["PHPSESSID"]){
-    $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root", "toor"); 
+    $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root"); 
     $consulta = $pdo->prepare('DELETE FROM newsletter WHERE id = :id');
     $consulta->bindParam(':id', $_GET["newsDelete"]);
     $consulta->execute();
