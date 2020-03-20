@@ -12,7 +12,6 @@
         <ul id="lista">
             <li><a class="opcoes" href="painel.php">Produtos</a></li>
             <li><a class="opcoes" href="painel.php?id=vendas">Vendas</a></li>
-            <li><a class="opcoes" href="painel.php?id=cadastro">Cadastro</a></li>
             <li><a class="opcoes" href="painel.php?id=usuarios">Usuarios</a></li>
             <li><a class="opcoes" href="painel.php?id=newsletter">Newsletter</a></li>
             <li><a class="opcoes" href="painel.php?id=logs">Logs</a></li>
@@ -32,9 +31,6 @@
                 switch ($_GET["id"]){
                     case "vendas":
                         include "vendas/venda.php";
-                    break;
-                    case "cadastro":
-                        include "produtos/add.php";
                     break;
                     case "usuarios":
                         include "users/usuarios.php";
