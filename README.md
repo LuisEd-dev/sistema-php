@@ -40,3 +40,42 @@ Execute os seguintes comandos:
 	  nome VARCHAR(255) NOT NULL,
 	  email VARCHAR(255) NOT NULL,
     PRIMARY KEY (`id`));
+
+### Para Linux: 
+
+* Instale Apache, MariaDB e MySQL
+
+Inicie todos os serviços
+
+__Configuração do Apache:__
+
+Clone o projeto no diretório /var/www/html
+
+__Configuração do MySQL:__
+
+Abra uma shell
+
+Execute os seguintes comandos:
+
+- mysql --user=root
+- DROP DATABASE test;
+- CREATE DATABASE adminsistema;
+- USE adminsistema;
+    CREATE TABLE admin ( 
+    id INT NOT NULL AUTO_INCREMENT ,
+    usuario VARCHAR(255) NOT NULL ,
+    senha VARCHAR(255) NOT NULL ,
+    email VARCHAR(255) NOT NULL,
+    PRIMARY KEY (`id`));
+- INSERT INTO admin (usuario, senha, email) VALUES ("admin", MD5("admin"), "admin@email.com");
+- CREATE TABLE produtos (
+    id INT NOT NULL AUTO_INCREMENT ,
+    produto VARCHAR(255) NOT NULL ,
+    valor VARCHAR(255) NOT NULL ,
+    estoque VARCHAR(255) NOT NULL,
+    PRIMARY KEY (`id`));
+- CREATE TABLE newsletter(
+	  id INT NOT NULL AUTO_INCREMENT,
+	  nome VARCHAR(255) NOT NULL,
+	  email VARCHAR(255) NOT NULL,
+    PRIMARY KEY (`id`));
