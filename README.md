@@ -79,3 +79,25 @@ Execute os seguintes comandos:
 	  nome VARCHAR(255) NOT NULL,
 	  email VARCHAR(255) NOT NULL,
     PRIMARY KEY (`id`));
+
+__Configuração do Newsletter:__
+
+- No arquivo C:\xampp\php\php.ini remova o ';' que antecede "extension=openssl"
+- No arquivo C:\xampp\php\php.ini encontre '[mail function]' e cole a seguinte configuração:
+
+SMTP=smtp.gmail.com<br>
+smtp_port=587<br>
+sendmail_from = __seu-email@gmail.com__<br>
+sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"<br>
+
+- No Arquivo C:\xampp\sendmail\sendmail.ini realize as seguintes configurações:
+
+smtp_server=smtp.gmail.com<br>
+smtp_port=587<br>
+error_logfile=error.log<br>
+debug_logfile=debug.log<br>
+auth_username=seu-email@gmail.com<br>
+auth_password=sua-senha<br>
+force_sender=luised-dev@sistemaphp.com<br>
+
+- Configure o Gmail para aceitar o uso de apps menos seguros
