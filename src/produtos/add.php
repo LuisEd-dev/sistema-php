@@ -1,11 +1,26 @@
 <?php 
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOKIE["validado"] == $_COOKIE["PHPSESSID"]){
     if((isset($_POST["produto"]) && $_POST["produto"] != "") && (isset($_POST["preco"]) && $_POST["preco"] != "") && (isset($_POST["estoque"]) && $_POST["estoque"] != "")){
+        try{
+            $preco = str_replace(',', '.', $_POST["preco"]);
+            $preco = floatval($preco);
+            if($preco == 0){
+                print 'Preencha Corretamente o Campo <b>Preço</b>';
+                exit();
+            }
+            $estoque = ((int) $_POST["estoque"]);
+            if($estoque == 0){
+                print 'Preencha Corretamente o Campo <b>Estoque</b>';
+                exit();
+            }
+        } catch(Exception $e) {
+            echo $e;
+        }
         $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root"); 
         $consulta = $pdo->prepare('INSERT INTO produtos (produto, valor, estoque) VALUES (:produto, :preco, :estoque)');
         $consulta->bindParam(':produto', $_POST["produto"]);
-        $consulta->bindParam(':preco', $_POST["preco"]);
-        $consulta->bindParam(':estoque', $_POST["estoque"]);
+        $consulta->bindParam(':preco', $preco);
+        $consulta->bindParam(':estoque', $estoque);
         
         $consulta->execute();
         header('Location: ../../painel.php');
