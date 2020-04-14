@@ -3,8 +3,22 @@
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_COOKIE["validado"]) && $_COOKIE["validado"] == $_COOKIE["PHPSESSID"]){
     $id = $_POST['id'];
     $produto = $_POST['produto'];
-    $valor =  $_POST['valor'];
-    $estoque = $_POST['estoque'];
+
+    try{
+        $valor = str_replace(',', '.', $_POST["valor"]);
+        $valor = floatval($valor);
+        if($valor == 0){
+            print 'Preencha Corretamente o Campo <b>Preço</b>';
+            exit();
+        }
+        $estoque = ((int) $_POST["estoque"]);
+        if($estoque == 0){
+            print 'Preencha Corretamente o Campo <b>Estoque</b>';
+            exit();
+        }
+    } catch(Exception $e) {
+        echo $e;
+    }
     
     $pdo = new PDO("mysql:host=localhost;dbname=adminsistema", "root"); 
     $consulta = $pdo->prepare('UPDATE produtos SET produto = :produto, valor = :valor, estoque = :estoque WHERE id = :id');
